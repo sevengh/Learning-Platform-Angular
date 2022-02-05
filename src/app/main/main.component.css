@@ -8,6 +8,18 @@
 }
 
 .pay-button {
-  margin-top: 16px;
-  color: red;
+  margin-top: 60px;
+  color: white;
+  border: 0ch;
+  background-color: green;
+  border-radius: 12px;
+  padding: 12px 24px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+p {
+  margin: 0px;
 }
