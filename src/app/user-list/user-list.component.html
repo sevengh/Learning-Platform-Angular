@@ -1,0 +1,15 @@
+<h3>Пользователи</h3>
+
+<div class="table">
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.firstName }} </span>
+    <span>{{ item.email }}</span>
+
+    <a
+      [title]="item.name + ' details'"
+      [routerLink]="['/users', item.id]"
+      [queryParams]="{ a: '1' }"
+      >{{ item.name }}</a
+    >
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.table {
+    margin-top: 10px;
+}
+
+.green-button {
+    background-color: green;
+    border: none;
+    margin: 2px;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  

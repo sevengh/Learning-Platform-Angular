@@ -1,17 +1,30 @@
 .content {
-    display: flex;
-    margin: 68px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-  }
-  
-  app-footer {
-    display: flex;
-    margin: 22px auto 12px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  display: flex;
+  margin: 68px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+}
+
+app-footer {
+  display: flex;
+  margin: 22px auto 12px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  background-color: #4caf50;
+  border: 0px;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 15px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.click {
+  cursor: pointer;
+}

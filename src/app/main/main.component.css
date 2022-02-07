@@ -12,8 +12,9 @@
   color: white;
   border: 0ch;
   background-color: green;
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 12px 24px;
+  cursor: pointer;
 }
 
 h2 {
