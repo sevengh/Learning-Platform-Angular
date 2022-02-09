@@ -1,0 +1,1 @@
+﻿ng build --output-path "C:\REPO\Project-Learning\Firebase-Hosting\public"
