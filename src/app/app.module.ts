@@ -16,6 +16,12 @@ import { LessonComponent } from './lesson/lesson.component';
 import { PostComponent } from './post/post.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { LoginComponent } from './login/login.component';
+import { LessonListComponent } from './lesson-list/lesson-list.component';
+import { LessonAddComponent } from './lesson-add/lesson-add.component';
+import { LessonDetailsComponent } from './lesson-details/lesson-details.component';
+import { DashboardComponent } from './profile/dashboard/dashboard.component';
+import { SecurityComponent } from './profile/security/security.component';
+import { ProfileComponent } from './profile/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +33,12 @@ import { LoginComponent } from './login/login.component';
     LessonComponent,
     PostComponent,
     UserListComponent,
+    LessonListComponent,
+    LessonAddComponent,
+    LessonDetailsComponent,
+    DashboardComponent,
+    SecurityComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,8 +48,14 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
       { path: '', component: MainComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'lessons', component: LessonComponent },
+      { path: 'lessons', component: LessonListComponent },
+      { path: 'lesson/:id', component: LessonDetailsComponent },
       { path: 'users', component: UserListComponent },
+      { path: 'options', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'security', component: SecurityComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'payment', component: PaymentComponent },
       { path: '**', component: ErrorComponent },
     ]),
     ServiceWorkerModule.register('ngsw-worker.js', {

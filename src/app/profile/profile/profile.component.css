@@ -1,0 +1,8 @@
+button {
+  min-width: 50px;
+  min-height: 20px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  color: gray;
+  padding: 3px 15px;
+}
