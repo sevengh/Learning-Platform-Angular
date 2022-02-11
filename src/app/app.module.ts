@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -22,6 +23,8 @@ import { LessonDetailsComponent } from './lesson-details/lesson-details.componen
 import { DashboardComponent } from './profile/dashboard/dashboard.component';
 import { SecurityComponent } from './profile/security/security.component';
 import { ProfileComponent } from './profile/profile/profile.component';
+import { RegisterComponent } from './register/register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,8 @@ import { ProfileComponent } from './profile/profile/profile.component';
     DashboardComponent,
     SecurityComponent,
     ProfileComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { ProfileComponent } from './profile/profile/profile.component';
     RouterModule.forRoot([
       { path: '', component: MainComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
       { path: 'lessons', component: LessonListComponent },
       { path: 'lesson/:id', component: LessonDetailsComponent },
       { path: 'users', component: UserListComponent },

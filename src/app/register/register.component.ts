@@ -4,11 +4,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
@@ -19,16 +19,16 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
     this.form = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
+  get f() { return this.form.controls; }
+
   ngOnInit(): void {}
-
-  get f() { return this.form.controls;}
-
-  onSubmit(): void {
-    console.log('submit');
-  }
+  
+  onSubmit(): void {}
 }
