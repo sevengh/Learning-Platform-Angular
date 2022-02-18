@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { AuthGuardService } from '../_services/auth-guard.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private auth: AuthGuardService
   ) {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -30,5 +32,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
   
-  onSubmit(): void {}
+  onSubmit(): void {
+    this.auth.userLoggedIn = true;
+  }
 }

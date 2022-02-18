@@ -1,17 +1,79 @@
 a {
     margin: 5px;
-    color: white;
+    color: #20222e;
     text-decoration: none;
-    font-size: smaller;
-    font-weight: 100;
-    font-family: Arial, Helvetica, sans-serif
-}
-
-/* Text hover */
-a:hover {
-    color: goldenrod;
-}
-
-nav {
+    vertical-align: middle;
     margin-right: 20px;
-}
+    border-radius: 5px;
+  }
+  
+  a:hover {
+    color: goldenrod;
+  }
+  
+  i {
+    font-size: 1.3em;
+  }
+  
+  img {
+    border-radius: 20px;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 20px;
+    border-radius: 20px;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover,
+  .dropbtn:focus {
+    background-color: #2980b9;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    border-radius: 10px;
+    right: 3px;
+    left: auto;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {
+    display: block;
+  }
+  
+  #myDropdown a {
+    margin: 5px;
+    color: #20222e;
+    text-decoration: none;
+    vertical-align: middle;
+    border-radius: 5px;
+  }

@@ -24,6 +24,9 @@ import { DashboardComponent } from './profile/dashboard/dashboard.component';
 import { SecurityComponent } from './profile/security/security.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthService } from './_services/auth.service';
+import { AuthGuardService } from './_services/auth-guard.service';
+import { TrademarkComponent } from './trademark/trademark.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { RegisterComponent } from './register/register.component';
     ProfileComponent,
     RegisterComponent,
     LoginComponent,
+    TrademarkComponent
   ],
   imports: [
     BrowserModule,
@@ -56,11 +60,27 @@ import { RegisterComponent } from './register/register.component';
       { path: 'register', component: RegisterComponent },
       { path: 'lessons', component: LessonListComponent },
       { path: 'lesson/:id', component: LessonDetailsComponent },
-      { path: 'users', component: UserListComponent },
+      {
+        path: 'users',
+        component: UserListComponent,
+        canActivate: [AuthGuardService],
+      },
       { path: 'options', component: DashboardComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'security', component: SecurityComponent },
-      { path: 'profile', component: ProfileComponent },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'security',
+        component: SecurityComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthGuardService],
+      },
       { path: 'payment', component: PaymentComponent },
       { path: '**', component: ErrorComponent },
     ]),
@@ -71,7 +91,7 @@ import { RegisterComponent } from './register/register.component';
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

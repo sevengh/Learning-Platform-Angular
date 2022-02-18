@@ -1,4 +1,4 @@
-.button-login {
+button {
   background-color: #4caf50;
   border: 0px;
   border-radius: 3px;
@@ -10,4 +10,13 @@
 
 label {
   color: gray;
+}
+
+input {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
 }

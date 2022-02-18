@@ -1,8 +1,17 @@
 <nav>
-  <a routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact:true}">Главная</a>
-  <a routerLinkActive="active" routerLink="/users">Пользователи</a>
+  <a
+    routerLinkActive="active"
+    routerLink=""
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Главная</a
+  >
+  <a *ngIf="auth.userLoggedIn" routerLinkActive="active" routerLink="/users"
+    >Пользователи</a
+  >
   <a routerLinkActive="active" routerLink="/status">Статус</a>
   <a routerLinkActive="active" routerLink="/lessons">Уроки</a>
   <a routerLinkActive="active" routerLink="/payment">Оплата</a>
-  <a routerLinkActive="active" routerLink="/options">Настройки</a>
+  <a *ngIf="auth.userLoggedIn" routerLinkActive="active" routerLink="/options"
+    >Настройки</a
+  >
 </nav>

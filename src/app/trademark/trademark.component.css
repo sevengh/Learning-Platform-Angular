@@ -1,0 +1,16 @@
+#trademark {
+  margin-left: 10px;
+  border-radius: 15px;
+  padding: 5px 10px 0px 5px;
+}
+
+#trademark img {
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+}
+
+span {
+  color: #20222e;
+  font-size: 1.3em;
+}

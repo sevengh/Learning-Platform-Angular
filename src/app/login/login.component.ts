@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { AuthService } from '../_services/auth.service';
+import { AuthGuardService } from '../_services/auth-guard.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private auth: AuthGuardService
   ) {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
@@ -26,9 +29,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  get f() { return this.form.controls;}
+  get f() {
+    return this.form.controls;
+  }
 
   onSubmit(): void {
-    console.log('submit');
+    this.auth.userLoggedIn = true;
+    this.router.navigate(['/']);
   }
 }
