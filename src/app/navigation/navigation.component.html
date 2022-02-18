@@ -1,17 +1,8 @@
 <nav>
-  <a
-    routerLinkActive="active-link"
-    routerLink=""
-    [routerLinkActiveOptions]="{ exact: true }"
-    >Главная</a
-  >
-  <a *ngIf="auth.userLoggedIn" routerLinkActive="active" routerLink="/users"
-    >Пользователи</a
-  >
-  <a routerLinkActive="active-link" routerLink="/status">Статус</a>
-  <a routerLinkActive="active-link" routerLink="/lessons">Уроки</a>
-  <a routerLinkActive="active-link" routerLink="/payment">Оплата</a>
-  <a *ngIf="auth.userLoggedIn" routerLinkActive="active-link" routerLink="/options"
-    >Настройки</a
-  >
+  <a *ngIf="auth.userLoggedIn" routerLinkActive="active" routerLink="/users">
+    <i class="fa fa-user"></i>
+  </a>
+  <a *ngIf="auth.userLoggedIn" routerLinkActive="active-link" routerLink="/options">
+    <i class="fa fa-cog"></i>
+  </a>
 </nav>

@@ -24,3 +24,7 @@ h2 {
 p {
   margin: 0px;
 }
+
+button {
+  min-width: 50%;
+}
