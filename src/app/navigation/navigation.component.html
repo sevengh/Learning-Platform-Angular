@@ -1,8 +1,24 @@
-<nav>
-  <a *ngIf="auth.userLoggedIn" routerLinkActive="active" routerLink="/users">
-    <i class="fa fa-user"></i>
-  </a>
-  <a *ngIf="auth.userLoggedIn" routerLinkActive="active-link" routerLink="/options">
-    <i class="fa fa-cog"></i>
-  </a>
-</nav>
+<div class="dropdown">
+  <img
+    onclick="myFunction()"
+    src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+    width="40"
+    height="40"
+    class="rounded-circle dropbtn"
+  />
+  <div id="myDropdown" class="dropdown-content">
+    <a routerLink="/profile" class="top">
+      <i class="fa fa-user"></i> Profile
+    </a>
+    <a *ngIf="auth.userLoggedIn" routerLinkActive="active" routerLink="/users">
+      <i class="fa fa-list"></i> Users
+    </a>
+    <a routerLinkActive="active-link" routerLink="/options">
+      <i class="fa fa-cog"></i> Settings
+    </a>
+    <hr />
+    <a (click)="onLogout()" class="buttom">
+      <i class="fas fa-door-open"></i> Exit
+    </a>
+  </div>
+</div>

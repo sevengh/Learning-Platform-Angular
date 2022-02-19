@@ -8,7 +8,7 @@ a {
   text-decoration: none;
   vertical-align: middle;
   margin-right: 20px;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 a:hover {
@@ -16,7 +16,7 @@ a:hover {
 }
 
 i {
-  font-size: 1.3em;
+  margin-right: 10px;
 }
 
 img {
@@ -75,9 +75,24 @@ img {
 }
 
 #myDropdown a {
-  margin: 5px;
+  margin: 0px;
   color: #20222e;
   text-decoration: none;
   vertical-align: middle;
-  border-radius: 5px;
+}
+
+hr {
+  margin: 0;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.top {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.buttom {
+  border-radius: 0px 0px 5px 5px;
 }

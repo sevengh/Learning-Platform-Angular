@@ -1,8 +1,10 @@
 <div class="toolbar no-select" role="banner">
   <app-trademark></app-trademark>
   <div class="spacer"></div>
-  <app-navigation></app-navigation>
-  <button class="login" routerLink="login">Login</button>
+  <app-navigation *ngIf="auth.userLoggedIn"></app-navigation>
+  <button *ngIf="!auth.userLoggedIn" class="login click" routerLink="login">
+    Login
+  </button>
 </div>
 
 <div class="content" role="main">
