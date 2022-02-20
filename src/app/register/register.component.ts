@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
 import { AuthGuardService } from '../_services/auth-guard.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     private auth: AuthGuardService
   ) {
@@ -34,5 +32,6 @@ export class RegisterComponent implements OnInit {
   
   onSubmit(): void {
     this.auth.userLoggedIn = true;
+    this.router.navigate(['/']);
   }
 }

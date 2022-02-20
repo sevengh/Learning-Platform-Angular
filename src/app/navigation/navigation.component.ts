@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthGuardService } from '../_services/auth-guard.service';
 
 @Component({
@@ -7,9 +8,12 @@ import { AuthGuardService } from '../_services/auth-guard.service';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-  constructor(public auth: AuthGuardService) {}
+  constructor(private auth: AuthGuardService, private router: Router) {}
 
   ngOnInit(): void {}
-  
-  onLogout(): void {}
+
+  onLogout(): void {
+    this.auth.userLoggedIn = false;
+    this.router.navigate(['/']);
+  }
 }
