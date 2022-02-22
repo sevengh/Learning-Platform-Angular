@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
-import { AuthService } from '../_services/auth.service';
 import { AuthGuardService } from '../_services/auth-guard.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +13,14 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
+  email: string = '';
+  password: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
-    private auth: AuthGuardService
+    private auth: AuthGuardService,
+    private toastr: ToastrService
   ) {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
@@ -34,7 +35,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.form.invalid) {
+      this.toastr.error('Login or password wrong', 'Warning!');
+      return;
+    }
+
     this.auth.userLoggedIn = true;
     this.router.navigate(['/']);
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 }

@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
@@ -27,6 +29,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './_services/auth.service';
 import { AuthGuardService } from './_services/auth-guard.service';
 import { TrademarkComponent } from './trademark/trademark.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,7 @@ import { TrademarkComponent } from './trademark/trademark.component';
     ProfileComponent,
     RegisterComponent,
     LoginComponent,
-    TrademarkComponent
+    TrademarkComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +93,8 @@ import { TrademarkComponent } from './trademark/trademark.component';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
